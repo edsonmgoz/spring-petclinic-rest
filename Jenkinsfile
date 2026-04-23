@@ -9,9 +9,20 @@ pipeline {
         //         git url: 'https://github.com/edsonmgoz/spring-petclinic-rest.git'
         //     }
         // }
-        stage('Build') {
+        stage('Compile') {
             steps {
-                sh 'mvn clean package -B -ntp'
+                sh 'mvn clean compile -B -ntp'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test -B -ntp'
+                // sh 'mvn test -Dmaven.test.failure.ignore=true -B -ntp'
+            }
+        }
+        stage('Package') {
+            steps {
+                sh 'mvn package -DskipTests -B -ntp'
             }
         }
     }
