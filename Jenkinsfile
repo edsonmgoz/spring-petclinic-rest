@@ -19,6 +19,13 @@ pipeline {
                 sh 'mvn test -B -ntp'
                 // sh 'mvn test -Dmaven.test.failure.ignore=true -B -ntp'
             }
+            post {
+                success {
+                    junit 'target/surefire-reports/*.xml'
+                    // echo 'Después de ejecutar los tests, se han recopilado los resultados.'
+                    // junit skipMarkingBuildUnstable: true, testResults: 'target/surefire-reports/*.xml'
+                }
+            }
         }
         stage('Package') {
             steps {
