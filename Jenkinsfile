@@ -4,7 +4,7 @@ pipeline {
         maven 'maven3.9.15'
     }
     triggers {
-        // cron('* * * * *')
+        // cron('* * * * *') // CRON para ejecutar cada minuto
         githubPush()
     }
     stages {
