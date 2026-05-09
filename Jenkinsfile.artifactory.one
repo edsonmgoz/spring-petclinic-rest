@@ -8,7 +8,7 @@ pipeline {
     }
     environment {
         MAVEN_OPTS = "-Dmaven.repo.local=${WORKSPACE}/.m2"
-        ARTIFACTORY_CREDENTIALS = credentials('artifactory-credentials')
+        // ARTIFACTORY_CREDENTIALS = credentials('artifactory-credentials')
     }
     stages {
         stage('Forma 1 - Artifactory - RtMaven') {
