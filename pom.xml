@@ -175,11 +175,6 @@
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.mycompany</groupId>
-            <artifactId>hello-world</artifactId>
-            <version>1.0.0</version>
-        </dependency>
     </dependencies>
 
     <reporting>
